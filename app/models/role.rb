@@ -1,5 +1,4 @@
 class Role < ApplicationRecord
-
     belongs_to :movie,
         foreign_key: :movie_id,
         class_name: :Movie

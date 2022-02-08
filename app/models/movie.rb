@@ -4,6 +4,6 @@ class Movie < ApplicationRecord
         class_name: :Role
 
     has_one :person,
-        foreign_key :person_id,
+        foreign_key: :person_id,
         class_name: :Person
 end

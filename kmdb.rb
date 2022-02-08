@@ -91,7 +91,7 @@ p12 = Person.create(name: "Anne Hathaway")
 
 m1 = Movie.create(title: "Batman Begins", year_released: 2005, rating: "PG-13", person_id: p1.id)
 m2 = Movie.create(title: "The Dark Knight", year_released: 2008, rating: "PG-13", person_id: p1.id)
-m3 = Movie.create(title: "The Dark Knight Rises", year_released :2012, rating: "PG-13", person_id: p1.id)
+m3 = Movie.create(title: "The Dark Knight Rises", year_released: 2012, rating: "PG-13", person_id: p1.id)
 
 r1 = Role.create(movie_id: m1.id, person_id: p2.id, character_name: "Bruce Wayne")
 r2 = Role.create(movie_id: m1.id, person_id: p3.id, character_name: "Alfred")
@@ -115,7 +115,10 @@ puts "======"
 puts ""
 
 # Query the movies data and loop through the results to display the movies output
-
+Movie.all.each do |movie|
+    director = Person.find(movie.person_id).name
+    puts movie.title + " " + movie.year_released + " " + movie.rating + " " + director
+end
 
 # Prints a header for the cast output
 puts ""
@@ -124,4 +127,8 @@ puts "========"
 puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie
-# TODO!
+Role.all.each do |role|
+    movie = Movie.find(role.movie_id)
+    person = Person.find(role.person_id)
+    puts movie.title + " " + person + " " + role.character_name
+end
