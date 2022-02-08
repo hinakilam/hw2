@@ -68,14 +68,46 @@
 
 # Delete existing data, so you'll start fresh each time this script is run.
 # Use `Model.destroy_all` code.
-# TODO!
+Movie.destroy_all
+Person.destroy_all
+Role.destroy_all
 
 # Generate models and tables, according to the domain model
-# TODO!
 
 # Insert data into your database that reflects the sample data shown above
 # Do not use hard-coded foreign key IDs.
-# TODO!
+p1 = Person.create(name: "Christopher Nolan")
+p2 = Person.create(name: "Christian Bale")
+p3 = Person.create(name: "Michael Caine")
+p4 = Person.create(name: "Liam Neeson")
+p5 = Person.create(name: "Katie Holmes")
+p6 = Person.create(name: "Gary Oldman")
+p7 = Person.create(name: "Heath Ledger")
+p8 = Person.create(name: "Aaron Eckhart")
+p9 = Person.create(name: "Maggie Gyllenhaal")
+p10 = Person.create(name: "Tom Hardy")
+p11 = Person.create(name: "Joseph Gordon-Levitt")
+p12 = Person.create(name: "Anne Hathaway")
+
+m1 = Movie.create(title: "Batman Begins", year_released: 2005, rating: "PG-13", person_id: p1.id)
+m2 = Movie.create(title: "The Dark Knight", year_released: 2008, rating: "PG-13", person_id: p1.id)
+m3 = Movie.create(title: "The Dark Knight Rises", year_released :2012, rating: "PG-13", person_id: p1.id)
+
+r1 = Role.create(movie_id: m1.id, person_id: p2.id, character_name: "Bruce Wayne")
+r2 = Role.create(movie_id: m1.id, person_id: p3.id, character_name: "Alfred")
+r3 = Role.create(movie_id: m1.id, person_id: p4.id, character_name: "Ra's Al Ghul")
+r4 = Role.create(movie_id: m1.id, person_id: p5.id, character_name: "Rachel Dawes")
+r5 = Role.create(movie_id: m1.id, person_id: p6.id, character_name: "Commissioner Gordon")
+r6 = Role.create(movie_id: m2.id, person_id: p2.id, character_name: "Bruce Wayne")
+r7 = Role.create(movie_id: m2.id, person_id: p7.id, character_name: "Joker")
+r8 = Role.create(movie_id: m2.id, person_id: p8.id, character_name: "Harvey Dent")
+r9 = Role.create(movie_id: m2.id, person_id: p3.id, character_name: "Alfred")
+r10 = Role.create(movie_id: m2.id, person_id: p9.id, character_name: "Rachel Dawes")
+r11 = Role.create(movie_id: m3.id, person_id: p2.id, character_name: "Bruce Wayne")
+r12 = Role.create(movie_id: m3.id, person_id: p6.id, character_name: "Commissioner Gordon")
+r13 = Role.create(movie_id: m3.id, person_id: p10.id, character_name: "Bane")
+r14 = Role.create(movie_id: m3.id, person_id: p11.id, character_name: "John Blake")
+r15 = Role.create(movie_id: m3.id, person_id: p12.id, character_name: "Selina Kyle")
 
 # Prints a header for the movies output
 puts "Movies"
@@ -83,7 +115,7 @@ puts "======"
 puts ""
 
 # Query the movies data and loop through the results to display the movies output
-# TODO!
+
 
 # Prints a header for the cast output
 puts ""
