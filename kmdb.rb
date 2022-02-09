@@ -76,38 +76,69 @@ Role.destroy_all
 
 # Insert data into your database that reflects the sample data shown above
 # Do not use hard-coded foreign key IDs.
-p1 = Person.create(name: "Christopher Nolan")
-p2 = Person.create(name: "Christian Bale")
-p3 = Person.create(name: "Michael Caine")
-p4 = Person.create(name: "Liam Neeson")
-p5 = Person.create(name: "Katie Holmes")
-p6 = Person.create(name: "Gary Oldman")
-p7 = Person.create(name: "Heath Ledger")
-p8 = Person.create(name: "Aaron Eckhart")
-p9 = Person.create(name: "Maggie Gyllenhaal")
-p10 = Person.create(name: "Tom Hardy")
-p11 = Person.create(name: "Joseph Gordon-Levitt")
-p12 = Person.create(name: "Anne Hathaway")
 
-m1 = Movie.create(title: "Batman Begins", year_released: 2005, rating: "PG-13", person_id: p1.id)
-m2 = Movie.create(title: "The Dark Knight", year_released: 2008, rating: "PG-13", person_id: p1.id)
-m3 = Movie.create(title: "The Dark Knight Rises", year_released: 2012, rating: "PG-13", person_id: p1.id)
+p1 = Person.new({name: "Christopher Nolan"})
+p1.save 
+p2 = Person.new({name: "Christian Bale"})
+p2.save
+p3 = Person.new({name: "Michael Caine"})
+p3.save
+p4 = Person.new({name: "Liam Neeson"})
+p4.save
+p5 = Person.new({name: "Katie Holmes"})
+p5.save
+p6 = Person.new({name: "Gary Oldman"})
+p6.save
+p7 = Person.new({name: "Heath Ledger"})
+p7.save
+p8 = Person.new({name: "Aaron Eckhart"})
+p8.save
+p9 = Person.new({name: "Maggie Gyllenhaal"})
+p9.save
+p10 = Person.new({name: "Tom Hardy"})
+p10.save
+p11 = Person.new({name: "Joseph Gordon-Levitt"})
+p11.save
+p12 = Person.new({name: "Anne Hathaway"})
+p12.save
 
-r1 = Role.create(movie_id: m1.id, person_id: p2.id, character_name: "Bruce Wayne")
-r2 = Role.create(movie_id: m1.id, person_id: p3.id, character_name: "Alfred")
-r3 = Role.create(movie_id: m1.id, person_id: p4.id, character_name: "Ra's Al Ghul")
-r4 = Role.create(movie_id: m1.id, person_id: p5.id, character_name: "Rachel Dawes")
-r5 = Role.create(movie_id: m1.id, person_id: p6.id, character_name: "Commissioner Gordon")
-r6 = Role.create(movie_id: m2.id, person_id: p2.id, character_name: "Bruce Wayne")
-r7 = Role.create(movie_id: m2.id, person_id: p7.id, character_name: "Joker")
-r8 = Role.create(movie_id: m2.id, person_id: p8.id, character_name: "Harvey Dent")
-r9 = Role.create(movie_id: m2.id, person_id: p3.id, character_name: "Alfred")
-r10 = Role.create(movie_id: m2.id, person_id: p9.id, character_name: "Rachel Dawes")
-r11 = Role.create(movie_id: m3.id, person_id: p2.id, character_name: "Bruce Wayne")
-r12 = Role.create(movie_id: m3.id, person_id: p6.id, character_name: "Commissioner Gordon")
-r13 = Role.create(movie_id: m3.id, person_id: p10.id, character_name: "Bane")
-r14 = Role.create(movie_id: m3.id, person_id: p11.id, character_name: "John Blake")
-r15 = Role.create(movie_id: m3.id, person_id: p12.id, character_name: "Selina Kyle")
+m1 = Movie.new({title: "Batman Begins", year_released: 2005, rating: "PG-13", person_id: p1.id})
+m1.save
+m2 = Movie.new({title: "The Dark Knight", year_released: 2008, rating: "PG-13", person_id: p1.id})
+m2.save
+m3 = Movie.new({title: "The Dark Knight Rises", year_released: 2012, rating: "PG-13", person_id: p1.id})
+m3.save
+
+r1 = Role.new({movie_id: m1.id, person_id: p2.id, character_name: "Bruce Wayne"})
+r1.save
+r2 = Role.new({movie_id: m1.id, person_id: p3.id, character_name: "Alfred"})
+r2.save
+r3 = Role.new({movie_id: m1.id, person_id: p4.id, character_name: "Ra's Al Ghul"})
+r3.save
+r4 = Role.new({movie_id: m1.id, person_id: p5.id, character_name: "Rachel Dawes"})
+r4.save
+r5 = Role.new({movie_id: m1.id, person_id: p6.id, character_name: "Commissioner Gordon"})
+r5.save
+r6 = Role.new({movie_id: m2.id, person_id: p2.id, character_name: "Bruce Wayne"})
+r6.save
+r7 = Role.new({movie_id: m2.id, person_id: p7.id, character_name: "Joker"})
+r7.save
+r8 = Role.new({movie_id: m2.id, person_id: p8.id, character_name: "Harvey Dent"})
+r8.save
+r9 = Role.new({movie_id: m2.id, person_id: p3.id, character_name: "Alfred"})
+r9.save
+r10 = Role.new({movie_id: m2.id, person_id: p9.id, character_name: "Rachel Dawes"})
+r10.save
+r11 = Role.new({movie_id: m3.id, person_id: p2.id, character_name: "Bruce Wayne"})
+r11.save
+r12 = Role.new({movie_id: m3.id, person_id: p6.id, character_name: "Commissioner Gordon"})
+r12.save
+r13 = Role.new({movie_id: m3.id, person_id: p10.id, character_name: "Bane"})
+r13.save
+r14 = Role.new({movie_id: m3.id, person_id: p11.id, character_name: "John Blake"})
+r14.save
+r15 = Role.new({movie_id: m3.id, person_id: p12.id, character_name: "Selina Kyle"})
+r15.save
 
 # Prints a header for the movies output
 puts "Movies"
@@ -115,8 +146,8 @@ puts "======"
 puts ""
 
 # Query the movies data and loop through the results to display the movies output
-Movie.all.each do |movie|
-    director = Person.find(movie.person_id).name
+for movie in Movie.all 
+    director = Person.where({Movie.person_id}).name
     puts movie.title + " " + movie.year_released + " " + movie.rating + " " + director
 end
 
@@ -128,6 +159,7 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie
 Role.all.each do |role|
+for person in
     movie = Movie.find(role.movie_id)
     person = Person.find(role.person_id)
     puts movie.title + " " + person + " " + role.character_name
