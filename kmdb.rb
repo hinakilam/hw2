@@ -147,8 +147,8 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output
 for movie in Movie.all 
-    director = Person.where({Movie.person_id}).name
-    puts movie.title + " " + movie.year_released + " " + movie.rating + " " + director
+    director = Person.where({id: p1.id})[0]   
+    puts "#{movie.title} - #{movie.year_released} - #{movie.rating} - #{director.name}"
 end
 
 # Prints a header for the cast output
@@ -158,9 +158,8 @@ puts "========"
 puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie
-Role.all.each do |role|
-for person in
-    movie = Movie.find(role.movie_id)
-    person = Person.find(role.person_id)
-    puts movie.title + " " + person + " " + role.character_name
+for role in Role.all
+    movie = Movie.where({id: role.movie_id})
+    person = Person.where({id: role.person_id})
+    puts "#{role.movie_id} - #{role.person_id} - #{role.character_name}"
 end
