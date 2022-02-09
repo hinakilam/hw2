@@ -159,7 +159,7 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie
 for role in Role.all
-    movie = Movie.where({id: role.movie_id})
-    person = Person.where({id: role.person_id})
-    puts "#{role.movie_id} - #{role.person_id} - #{role.character_name}"
+    movie = Movie.where({id: role.movie_id})[0]
+    person = Person.where({id: role.person_id})[0]
+    puts "#{movie.title} - #{person.name} - #{role.character_name}"
 end
